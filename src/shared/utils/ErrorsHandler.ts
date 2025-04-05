@@ -1,6 +1,6 @@
 import { Response } from 'express';
 import { ZodSchema } from 'zod';
-import { ResponseErrors } from './response-errors';
+import { ResponseErrors } from './ResponseErrors';
 
 interface IResponseErrors {
   res: Response;
