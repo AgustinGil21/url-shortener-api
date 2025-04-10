@@ -1,4 +1,4 @@
-export class ResponseErrors {
+export default class ResponseErrors {
   static generic() {
     return { status: 400, message: `Error.` };
   }

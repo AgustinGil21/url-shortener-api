@@ -1,6 +1,6 @@
 import { Response } from 'express';
 import { ZodSchema } from 'zod';
-import { ResponseErrors } from './ResponseErrors';
+import ResponseErrors from './ResponseErrors';
 
 interface IResponseErrors {
   res: Response;
@@ -32,8 +32,8 @@ export default class ErrorsHandler {
         return res.status(400).json({ issues: result.error.issues });
       }
     } catch (error) {
-      const { status: errStatus, message } = ResponseErrors.internal();
-      return res.status(errStatus).json({ message: message });
+      const { status, message } = ResponseErrors.internal();
+      return res.status(status).json({ message: message });
     }
   }
 }

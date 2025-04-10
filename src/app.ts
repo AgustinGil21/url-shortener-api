@@ -1,5 +1,5 @@
 import express, { json } from 'express';
-import { corsMiddleware } from './interfaces/middlewares/cors';
+import { corsMiddleware } from './shared/middlewares/cors';
 import { PORT } from './config/dotenv-config';
 import cookieParser from 'cookie-parser';
 

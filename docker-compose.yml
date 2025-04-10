@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: ghcr.io/citusdata/pg_cron:latest
+    container_name: url-shortener-pg
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: agustin
+      POSTGRES_PASSWORD: localhost19
+      POSTGRES_DB: url_shortener_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    command: >
+      postgres -c shared_preload_libraries=pg_cron
+               -c cron.database_name=url_shortener_db
+
+volumes:
+  pgdata:
