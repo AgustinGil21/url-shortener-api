@@ -9,4 +9,5 @@ export const {
   PG_PASSWORD,
   PG_USER,
   SECRETKEY,
+  NODE_ENV,
 } = process.env;
