@@ -34,4 +34,16 @@ export default class ResponseErrors {
   static operation() {
     return { status: 400, message: 'Could not complete operation.' };
   }
+
+  static invalid(field: string) {
+    return { status: 401, message: `Invalid ${field}.` };
+  }
+
+  static notLogged(field?: string) {
+    return { status: 401, message: `${field ?? 'User'} not logged.` };
+  }
+
+  static custom(message: string, status: number) {
+    return { status, message: `${message}.` };
+  }
 }

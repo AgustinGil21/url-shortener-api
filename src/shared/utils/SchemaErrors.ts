@@ -1,6 +1,10 @@
 type Num = string | number;
 
 export default class SchemaErrors {
+  static generic() {
+    return 'Zod error.';
+  }
+
   static invalidFormat(field: string) {
     return `Invalid ${field} format.`;
   }
@@ -55,5 +59,9 @@ export default class SchemaErrors {
 
   static mismatch(field1: Num, field2: Num) {
     return `${field1} does not match ${field2}.`;
+  }
+
+  static custom(message: string) {
+    return `${message}.`;
   }
 }
