@@ -8,4 +8,6 @@ export const {
   PG_PORT,
   PG_PASSWORD,
   PG_USER,
+  SECRETKEY,
+  NODE_ENV,
 } = process.env;
