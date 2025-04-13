@@ -10,4 +10,6 @@ export const {
   PG_USER,
   SECRETKEY,
   NODE_ENV,
+  EMAIL_ADDRESS,
+  SENDGRID_API_KEY,
 } = process.env;

@@ -46,4 +46,8 @@ export default class ResponseErrors {
   static custom(message: string, status: number) {
     return { status, message: `${message}.` };
   }
+
+  static email() {
+    return { status: 400, message: 'Could not send email.' };
+  }
 }

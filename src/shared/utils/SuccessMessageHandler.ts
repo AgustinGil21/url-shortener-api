@@ -22,4 +22,8 @@ export default class SuccessMessageHandler {
   static custom(message: string) {
     return `${message}.`;
   }
+
+  static email() {
+    return 'Email successfully sended.';
+  }
 }
