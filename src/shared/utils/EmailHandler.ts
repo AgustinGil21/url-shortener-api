@@ -3,6 +3,7 @@ import { EMAIL_ADDRESS, SENDGRID_API_KEY } from '../../config/dotenv-config';
 import { TEmailAddress } from '../types/interfaces';
 import ResponseErrors from './ResponseErrors';
 import SuccessMessageHandler from './SuccessMessageHandler';
+import LoggerHandler from './LoggerHandler';
 
 interface IGenerateEmail {
   to: TEmailAddress;
@@ -26,9 +27,10 @@ export default class EmailHandler {
     try {
       const message = SuccessMessageHandler.email();
       await sgMail.send(email);
-      console.log(message);
+      LoggerHandler.create('email-system').info(message);
     } catch (err) {
       const { message } = ResponseErrors.email();
+      LoggerHandler.create('email-system').error(message);
       throw new Error(message);
     }
   }

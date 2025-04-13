@@ -21,7 +21,7 @@ logger.add(
   })
 );
 
-export default class Logger {
+export default class LoggerHandler {
   static create(service: string) {
     return {
       info: (message: string) => {
@@ -46,4 +46,4 @@ export default class Logger {
   }
 }
 
-// Usage method: Logger.create('service-name').info('message')
+// Usage method: LoggerHandler.create('service-name').info('message')
