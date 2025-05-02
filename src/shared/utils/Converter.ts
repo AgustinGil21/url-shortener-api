@@ -1,7 +1,19 @@
+import ResponseErrors from './ResponseErrors';
+import SchemaErrors from './SchemaErrors';
+
 export default class Converter {
   static toBase32(code: number) {
     const alphabet = 'abcdefghijkmnpqrstuvwxyz23456789';
     let encoded = '';
+
+    const { message: invalidMsg } = ResponseErrors.invalid('code');
+
+    // Check if code is valid
+    if (typeof code !== 'number') {
+      throw new Error(invalidMsg);
+    } else if (!Number.isInteger(code)) {
+      throw new Error(invalidMsg);
+    }
 
     // Just for auto incremental
     // integers.
