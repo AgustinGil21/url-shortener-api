@@ -28,7 +28,7 @@ export default class UserValues implements IUserEntity {
     this.created_at = DateHelper.getTimestamp();
     this.emailAddress = emailAddress;
     this.password = password;
-    this.username = username ?? emailAddress.split('@')[1];
+    this.username = username ?? emailAddress.split('@')[0];
     this.deleted = false;
     this.account_type = 'free';
   }
